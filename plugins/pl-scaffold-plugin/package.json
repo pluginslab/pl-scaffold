@@ -11,7 +11,7 @@
 		"format:css": "wp-scripts format-style",
 		"format:js": "wp-scripts format-js",
 		"clean": "del-cli build",
-		"dist": "npm run clean && npm run build && zip -r pl-scaffold-plugin.zip -@ < .distpackage"
+		"dist": "npm run clean && npm run build && zip -d pl-scaffold-plugin.zip '*' && zip -r pl-scaffold-plugin.zip -@ < .distpackage"
 	},
 	"author": "Marcel Schmitz",
 	"license": "ISC",

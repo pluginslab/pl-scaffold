@@ -4,6 +4,12 @@
 	"description": "A scaffold theme for WordPress supporting blocks.",
 	"main": "index.js",
 	"scripts": {
+		"npm-install": "composer install && npm-run-all --parallel npm-install:*",
+		"npm-install:plugin": "cd plugins/pl-scaffold-plugin && npm install",
+		"npm-install:theme": "cd themes/pl-scaffold-theme && npm install",
+		"composer-install": "composer install && npm-run-all --parallel composer-install:*",
+		"composer-install:plugin": "cd plugins/pl-scaffold-plugin && composer install",
+		"composer-install:theme": "cd themes/pl-scaffold-theme && composer install",
 		"watch": "npm-run-all --parallel watch:*",
 		"watch:theme": "cd themes/pl-scaffold-theme && npm run watch",
 		"watch:plugin": "cd plugins/pl-scaffold-plugin && npm run watch",
@@ -13,9 +19,9 @@
 		"build": "npm-run-all --parallel build:*",
 		"build:theme": "cd themes/pl-scaffold-theme && npm run build",
 		"build:plugin": "cd plugins/pl-scaffold-plugin && npm run build",
-		"composer-install": "composer install && npm-run-all --parallel composer-install:*",
-		"composer-install:plugin": "cd plugins/pl-scaffold-plugin && composer install",
-		"composer-install:theme": "cd themes/pl-scaffold-theme && composer install"
+		"dist": "composer install && npm-run-all --parallel dist:*",
+		"dist:plugin": "cd plugins/pl-scaffold-plugin && npm run dist",
+		"dist:theme": "cd themes/pl-scaffold-theme && npm run dist"
 	},
 	"author": "Marcel Schmitz",
 	"license": "ISC",
