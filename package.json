@@ -13,7 +13,7 @@
     "build": "npm-run-all --parallel build:*",
     "build:theme": "cd themes/pl-scaffold-theme && npm run build",
     "build:plugin": "cd plugins/pl-scaffold-plugin && npm run build",
-    "composer-install": "npm-run-all --parallel composer-install:*",
+    "composer-install": "composer install && npm-run-all --parallel composer-install:*",
     "composer-install:plugin": "cd plugins/pl-scaffold-plugin && composer install",
     "composer-install:theme": "cd themes/pl-scaffold-theme && composer install"
   },

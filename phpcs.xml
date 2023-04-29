@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+    <description>WordPress coding standards for my project.</description>
+
+    <!-- Use the WordPress coding standards -->
+    <rule ref="WordPress"/>
+
+    <!-- Define the target PHP files -->
+    <file>./</file>
+
+    <!-- Ignore specific folders or files -->
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+</ruleset>
