@@ -1,4 +1,5 @@
 index.php
+!themes/pl-scaffold-theme/index.php
 plugins/*
 !plugins/pl-scaffold-plugin/
 themes/*
@@ -12,3 +13,4 @@ plugins/pl-scaffold-plugin/vendor
 themes/pl-scaffold-theme/dist
 plugins/pl-scaffold-plugin/build
 debug.log
+*.zip

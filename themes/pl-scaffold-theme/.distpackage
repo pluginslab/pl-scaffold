@@ -1,0 +1,10 @@
+dist/
+includes/
+languages/
+templates/
+footer.php
+functions.php
+header.php
+index.php
+manifest.json
+style.css

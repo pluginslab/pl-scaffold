@@ -5,7 +5,8 @@
 	"scripts": {
 		"watch": "webpack --mode development --watch",
 		"build": "webpack --mode production",
-		"clean": "del-cli dist"
+		"clean": "del-cli dist",
+		"dist": "npm run clean && npm run build && zip -r pl-scaffold-theme.zip -@ < .distpackage"
 	},
 	"author": "Marcel Schmitz",
 	"license": "ISC",
