@@ -11,3 +11,4 @@ themes/pl-scaffold-theme/vendor
 plugins/pl-scaffold-plugin/vendor
 themes/pl-scaffold-theme/dist
 plugins/pl-scaffold-plugin/build
+debug.log
