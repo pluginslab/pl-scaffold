@@ -3,3 +3,7 @@ plugins/*
 !plugins/pl-scaffold-plugin/
 themes/*
 !themes/pl-scaffold-theme/
+node_modules/*
+themes/pl-scaffold-theme/node_modules
+plugins/pl-scaffold-plugin/node_modules
+

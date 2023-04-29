@@ -4,13 +4,13 @@
   "description": "A scaffold theme for WordPress supporting blocks.",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "wp-scripts lint-js",
-    "format:css": "wp-scripts format-style",
-    "format:js": "wp-scripts format-js"
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:theme": "cd themes/pl-scaffold-theme && npm run watch",
+    "watch:plugin": "cd plugins/pl-scaffold-plugin && npm run watch"
   },
   "author": "Marcel Schmitz",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }
