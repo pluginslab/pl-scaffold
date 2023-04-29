@@ -6,4 +6,8 @@ themes/*
 node_modules/*
 themes/pl-scaffold-theme/node_modules
 plugins/pl-scaffold-plugin/node_modules
-
+vendor/*
+themes/pl-scaffold-theme/vendor
+plugins/pl-scaffold-plugin/vendor
+themes/pl-scaffold-theme/dist
+plugins/pl-scaffold-plugin/build

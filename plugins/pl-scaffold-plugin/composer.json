@@ -1,0 +1,9 @@
+{
+  "name": "pluginslab/pl-scaffold-plugin",
+  "description": "A Composer package for scaffolding a WordPress plugin.",
+  "type": "wordpress-plugin",
+  "require-dev": {
+    "squizlabs/php_codesniffer": "@stable",
+    "wp-coding-standards/wpcs": "@stable"
+  }
+}
