@@ -8,8 +8,8 @@ module.exports = (env, argv) => {
     return {
         mode: mode,
         entry: {
-            'frontend': ['./assets/css/frontend.css', './assets/js/frontend.js'],
-            'backend': ['./assets/css/backend.css', './assets/js/backend.js'],
+            'frontend': ['./assets/css/frontend.scss', './assets/js/frontend.js'],
+            'backend': ['./assets/css/backend.scss', './assets/js/backend.js'],
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -17,9 +17,14 @@ module.exports = (env, argv) => {
         },
         module: {
             rules: [
+
                 {
-                    test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                    test: /\.scss$/,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'sass-loader',
+                    ],
                 },
                 {
                     test: /\.js$/,
