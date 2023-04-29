@@ -1,0 +1,10 @@
+{
+	"apiVersion": 2,
+	"title": "Example",
+	"name": "pl-scaffold/example",
+	"category": "layout",
+	"icon": "universal-access-alt",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
