@@ -1,0 +1,5 @@
+index.php
+plugins/*
+!plugins/pl-scaffold-plugin
+themes/*
+!themes/pl-scaffold-theme
