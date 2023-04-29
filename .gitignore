@@ -1,5 +1,5 @@
 index.php
 plugins/*
-!plugins/pl-scaffold-plugin
+!plugins/pl-scaffold-plugin/
 themes/*
-!themes/pl-scaffold-theme
+!themes/pl-scaffold-theme/
