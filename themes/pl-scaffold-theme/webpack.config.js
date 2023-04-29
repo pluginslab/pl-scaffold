@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const IgnoreEmitPlugin = require('ignore-emit-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = (env, argv) => {
@@ -37,7 +37,14 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: '[name].css',
             }),
-            new IgnoreEmitPlugin(/\.js$/),
+            new CopyWebpackPlugin({
+                patterns: [
+                    {
+                        from: 'assets/images',
+                        to: 'images',
+                    },
+                ],
+            }),
         ],
     };
 };

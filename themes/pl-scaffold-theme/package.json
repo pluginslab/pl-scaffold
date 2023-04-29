@@ -1,25 +1,27 @@
 {
-  "name": "pl-scaffold-theme",
-  "version": "1.0.0",
-  "description": "A scaffold theme for WordPress supporting blocks.",
-  "scripts": {
-    "watch": "webpack --mode development --watch",
-    "build": "webpack --mode production",
-    "clean": "del-cli dist"
-  },
-  "author": "Marcel Schmitz",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.21.5",
-    "@babel/preset-env": "^7.21.5",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.7.3",
-    "del-cli": "^5.0.0",
-    "glob": "^10.2.2",
-    "ignore-emit-webpack-plugin": "^2.0.6",
-    "mini-css-extract-plugin": "^2.7.5",
-    "style-loader": "^3.3.2",
-    "webpack": "^5.81.0",
-    "webpack-cli": "^5.0.2"
-  }
+	"name": "pl-scaffold-theme",
+	"version": "1.0.0",
+	"description": "A scaffold theme for WordPress supporting blocks.",
+	"scripts": {
+		"watch": "webpack --mode development --watch",
+		"build": "webpack --mode production",
+		"clean": "del-cli dist"
+	},
+	"author": "Marcel Schmitz",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.21.5",
+		"@babel/preset-env": "^7.21.5",
+		"babel-loader": "^9.1.2",
+		"css-loader": "^6.7.3",
+		"del-cli": "^5.0.0",
+		"glob": "^10.2.2",
+		"mini-css-extract-plugin": "^2.7.5",
+		"style-loader": "^3.3.2",
+		"webpack": "^5.81.0",
+		"webpack-cli": "^5.0.2"
+	},
+	"dependencies": {
+		"normalize.css": "^8.0.1"
+	}
 }

@@ -10,6 +10,8 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: pl-scaffold-plugin
  * Domain Path: /languages
+ *
+ * @package pl-scaffold-plugin
  */
 
 // Ensure the plugin is being run from the correct folder.
@@ -30,15 +32,12 @@ define( 'PL_SCAFFOLD_PLUGIN_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
  * @return void
  */
 function pl_scaffold_plugin_register_blocks() {
-	// Define the blocks directory path
 	$blocks_directory = plugin_dir_path( __FILE__ ) . 'src/blocks/';
 
-	// Ensure the directory exists
 	if ( ! is_dir( $blocks_directory ) ) {
 		return;
 	}
 
-	// Find all PHP files recursively in the blocks directory
 	$iterator    = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $blocks_directory ) );
 	$block_files = array();
 
@@ -48,7 +47,6 @@ function pl_scaffold_plugin_register_blocks() {
 		}
 	}
 
-	// Include each PHP file found
 	foreach ( $block_files as $block_file ) {
 		include_once $block_file;
 	}

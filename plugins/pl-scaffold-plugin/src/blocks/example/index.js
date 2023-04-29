@@ -3,6 +3,11 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 
+/**
+ * Internal dependencies
+ */
+import './editor.scss';
+
 // Register the block
 registerBlockType('pl-scaffold/example', {
     edit: function () {

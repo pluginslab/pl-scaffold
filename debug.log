@@ -1,0 +1,2 @@
+[29-Apr-2023 16:39:25 UTC] PHP Warning:  mysqli_real_connect(): php_network_getaddresses: getaddrinfo for mariadb failed: Name or service not known in /home/marcelschmitz/localdev/websites/scaffold/data/wp-includes/class-wpdb.php on line 2019
+[29-Apr-2023 16:39:25 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): php_network_getaddresses: getaddrinfo for mariadb failed: Name or service not known in /home/marcelschmitz/localdev/websites/scaffold/data/wp-includes/class-wpdb.php on line 2019

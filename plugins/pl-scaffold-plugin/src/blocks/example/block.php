@@ -1,13 +1,18 @@
 <?php
+/**
+ * Registers the block so that they can be enqueued through Gutenberg in
+ * the corresponding context.
+ *
+ * @return void
+ * @package pl-scaffold-plugin
+ */
 
-// Ensure the plugin is being run from the correct folder.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Registers the block so that they can be enqueued through Gutenberg in
- * the corresponding context.
+ * Registering the block.
  *
  * @return void
  */
