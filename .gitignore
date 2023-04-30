@@ -29,3 +29,7 @@ debug.log
 ## You'll have to add other files and folders here to keep your project clean.
 object-cache.php
 uploads/*
+
+## OS's files.
+.DS_Store
+Thumbs.db
