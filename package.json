@@ -4,7 +4,7 @@
 	"description": "A scaffold theme for WordPress supporting blocks.",
 	"main": "index.js",
 	"scripts": {
-		"npm-install": "composer install && npm-run-all --parallel npm-install:*",
+		"npm-install": "npm install && npm-run-all --parallel npm-install:*",
 		"npm-install:plugin": "cd plugins/pl-scaffold-plugin && npm install",
 		"npm-install:theme": "cd themes/pl-scaffold-theme && npm install",
 		"composer-install": "composer install && npm-run-all --parallel composer-install:*",
