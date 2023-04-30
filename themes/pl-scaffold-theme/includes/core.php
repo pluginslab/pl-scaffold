@@ -83,7 +83,7 @@ function theme_setup() {
  */
 function scripts() {
 
-	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH ) ) {
 		return;
 	}
 
@@ -104,7 +104,7 @@ function scripts() {
  */
 function admin_scripts() {
 
-	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH ) ) {
 		return;
 	}
 
@@ -124,7 +124,7 @@ function admin_scripts() {
  */
 function styles() {
 
-	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH ) ) {
 		return;
 	}
 
@@ -143,7 +143,7 @@ function styles() {
  */
 function admin_styles() {
 
-	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH ) ) {
 		return;
 	}
 
@@ -163,7 +163,6 @@ function admin_styles() {
  * @return void
  */
 function js_detection() {
-
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 
