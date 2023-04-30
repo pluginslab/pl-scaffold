@@ -83,10 +83,10 @@ function theme_setup() {
  */
 function scripts() {
 
-	/**
-	 * Enqueuing frontend.js is required to get css hot reloading working in the frontend
-	 * If you're not shipping any front-end js wrap this enqueue in a SCRIPT_DEBUG check.
-	 */
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+		return;
+	}
+
 	wp_enqueue_script(
 		'frontend',
 		PL_SCAFFOLD_THEME_TEMPLATE_URL . '/dist/frontend.js',
@@ -103,6 +103,11 @@ function scripts() {
  * @return void
  */
 function admin_scripts() {
+
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+		return;
+	}
+
 	wp_enqueue_script(
 		'backend',
 		PL_SCAFFOLD_THEME_TEMPLATE_URL . '/dist/backend.js',
@@ -119,6 +124,10 @@ function admin_scripts() {
  */
 function styles() {
 
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+		return;
+	}
+
 	wp_enqueue_style(
 		'styles',
 		PL_SCAFFOLD_THEME_TEMPLATE_URL . '/dist/frontend.css',
@@ -133,6 +142,10 @@ function styles() {
  * @return void
  */
 function admin_styles() {
+
+	if ( ! file_exists( PL_SCAFFOLD_THEME_DIST_PATH . '/dist/' ) ) {
+		return;
+	}
 
 	wp_enqueue_style(
 		'styles',
