@@ -1,16 +1,31 @@
+## Dev folders.
+node_modules/*
+vendor/*
+themes/pl-scaffold-theme/node_modules
+themes/pl-scaffold-theme/vendor
+plugins/pl-scaffold-plugin/node_modules
+plugins/pl-scaffold-plugin/vendor
+
+## All index files but ours.
 index.php
 !themes/pl-scaffold-theme/index.php
+
+## All plugins but ours.
 plugins/*
 !plugins/pl-scaffold-plugin/
+
+## All themes but ours.
 themes/*
 !themes/pl-scaffold-theme/
-node_modules/*
-themes/pl-scaffold-theme/node_modules
-plugins/pl-scaffold-plugin/node_modules
-vendor/*
-themes/pl-scaffold-theme/vendor
-plugins/pl-scaffold-plugin/vendor
+
+## All dist files.
 themes/pl-scaffold-theme/dist
 plugins/pl-scaffold-plugin/build
+
+## The rest of the files.
 debug.log
 *.zip
+
+## You'll have to add other files and folders here to keep your project clean.
+object-cache.php
+uploads/*
