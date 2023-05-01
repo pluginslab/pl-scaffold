@@ -26,6 +26,7 @@
 	"author": "Marcel Schmitz",
 	"license": "ISC",
 	"devDependencies": {
+		"@wordpress/eslint-plugin": "^14.5.0",
 		"@wordpress/prettier-config": "^2.15.0",
 		"copy-webpack-plugin": "^11.0.0",
 		"del-cli": "^5.0.0",
