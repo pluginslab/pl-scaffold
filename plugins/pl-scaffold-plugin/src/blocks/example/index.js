@@ -10,10 +10,10 @@ import './editor.scss';
 
 // Register the block
 registerBlockType('pl-scaffold/example', {
-    edit: function () {
+    edit() {
         return <p> Hello world (from the editor)</p>;
     },
-    save: function () {
+    save() {
         return <p> Hola mundo (from the frontend) </p>;
     },
 });
