@@ -3,6 +3,8 @@
     <description>WordPress coding standards for my project.</description>
 
     <!-- Use the WordPress coding standards -->
+    <!-- If your PHPCS shouts an error saying WordPress ruleset is not available, run this on your command line (remove the \):-->
+    <!-- ./vendor/bin/phpcs \-\-config-set installed_paths ./vendor/wp-coding-standards/wpcs -->
     <rule ref="WordPress"/>
 
     <!-- Define the target PHP files -->
@@ -10,4 +12,7 @@
 
     <!-- Ignore specific folders or files -->
     <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>/themes/pl-scaffold-theme/dist/*</exclude-pattern>
+	<exclude-pattern>/plugins/pl-scaffold-plugin/build/*</exclude-pattern>
 </ruleset>
