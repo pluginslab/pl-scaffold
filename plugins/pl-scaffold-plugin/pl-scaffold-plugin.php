@@ -19,36 +19,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Define constants.
-define( 'PL_SCAFFOLD_PLUGIN_VERSION', '1.0' );
-define( 'PL_SCAFFOLD_PLUGIN_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+if ( !class_exists( 'pl_scaffold_plugin' ) ) {
 
-// Let's include all blocks here.
-
-/**
- * Registers all block assets so that they can be enqueued through Gutenberg in
- * the corresponding context.
- *
- * @return void
- */
-function pl_scaffold_plugin_register_blocks() {
-	$blocks_directory = plugin_dir_path( __FILE__ ) . 'src/blocks/';
-
-	if ( ! is_dir( $blocks_directory ) ) {
-		return;
-	}
-
-	$iterator    = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $blocks_directory ) );
-	$block_files = array();
-
-	foreach ( $iterator as $file ) {
-		if ( $file->isFile() && $file->getExtension() === 'php' ) {
-			$block_files[] = $file->getPathname();
+	class pl_scaffold_plugin {
+							
+	    public function __construct() {
+		    
+		    // Register blocks that lack a registration php script
+		    add_action( 'init', array( $this, 'register_blocks' ) );
+		    
+		    // Run blocks registration php scripts
+			add_action( 'plugins_loaded', array( $this, 'include_block_files' ) );
+	    }
+	    
+		public function include_block_files() {
+			$blocks_directory = plugin_dir_path( __FILE__ ) . 'src/blocks/';
+		
+			if ( ! is_dir( $blocks_directory ) ) {
+				return;
+			}
+		
+			$iterator    = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $blocks_directory ) );
+			$block_files = array();
+		
+			foreach ( $iterator as $file ) {
+				if ( $file->isFile() && $file->getExtension() === 'php' ) {
+					$block_files[] = $file->getPathname();
+				}
+			}
+		
+			foreach ( $block_files as $block_file ) {
+				include_once $block_file;
+			}
+		}
+		
+		public function register_blocks() {
+			$blocks_directory = plugin_dir_path( __FILE__ ) . 'src/blocks/';
+		
+			if ( ! is_dir( $blocks_directory ) ) {
+				return;
+			}
+		
+			$iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $blocks_directory ) );
+			$blocks   = array();
+		
+			foreach ( $iterator as $file ) {
+				
+				$path = $file->getPath();
+				if ( "$path/" !== $blocks_directory ) {
+					if ( !isset( $blocks[ $path ] ) ) {
+						$blocks[ $path ] = '';
+					}
+			
+					if ( $file->isFile() && $file->getExtension() === 'php' ) {
+						$blocks[ $path ] = $file->getPathname();
+					}
+				}
+			}
+			
+			foreach ( $blocks as $block_path => $block_file ) {
+				if ( !$block_file ) {
+					$block_path = str_replace( 'src', 'build', $block_path );
+					if ( file_exists( "$block_path/block.json" ) ) {
+						register_block_type( $block_path );
+					}
+				}
+			}
 		}
 	}
-
-	foreach ( $block_files as $block_file ) {
-		include_once $block_file;
-	}
 }
-add_action( 'plugins_loaded', 'pl_scaffold_plugin_register_blocks' );
+
+if ( class_exists( 'pl_scaffold_plugin' ) ) {
+
+	// Define constants.
+	define( 'PL_SCAFFOLD_PLUGIN_VERSION', '1.0' );
+	define( 'PL_SCAFFOLD_PLUGIN_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+	
+	new pl_scaffold_plugin();
+}

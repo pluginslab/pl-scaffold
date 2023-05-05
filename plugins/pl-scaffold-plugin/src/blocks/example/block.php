@@ -11,12 +11,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/**
- * Registering the block.
- *
- * @return void
- */
-function pl_scaffold_plugin_enqueue_example_block_register_block() {
-	register_block_type( PL_SCAFFOLD_PLUGIN_PLUGIN_DIR . 'build/blocks/example' );
+if ( !class_exists( 'pl_block_1' ) ) {
+
+	class pl_block_1 {
+		
+		public function __construct() {
+			add_action( 'init', array( $this, 'register_block' ) );
+		}
+		
+		public function register_block() {
+			register_block_type( PL_SCAFFOLD_PLUGIN_PLUGIN_DIR . 'build/blocks/example' );
+		}
+	}
 }
-add_action( 'init', 'pl_scaffold_plugin_enqueue_example_block_register_block' );
+
+new pl_block_1();
