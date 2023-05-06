@@ -7,13 +7,12 @@ import { registerBlockType } from '@wordpress/blocks';
  * Internal dependencies
  */
 import metadata from './block.json';
+import edit from './edit';
+import save from './save';
+import './style.scss';
 
 // Register the block
 registerBlockType(metadata, {
-	edit() {
-		return <p> Hello world (from the editor)</p>;
-	},
-	save() {
-		return <p> Hola mundo (from the frontend) </p>;
-	},
+	edit,
+	save,
 });
