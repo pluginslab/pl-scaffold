@@ -1,5 +1,7 @@
 import './editor.scss';
 
-export default edit = () => {
+const edit = () => {
 	return <p> Hello world (from the editor)</p>;
 };
+
+export default edit;

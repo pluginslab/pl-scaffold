@@ -1,1 +1,1 @@
-console.log("backend.js loaded");
+console.log('backend.js loaded');
